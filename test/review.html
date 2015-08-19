@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+    /*var a = 1;
+     var a = 12;
+     function test(a,b){
+     var a = 1234;
+     var b;
+     console.log(a);//1234
+     console.log(b);//100
+     }
+     test(100,100);
+     console.log(a);//12
+     var b = 123456;
+     var b;
+     console.log(b);*/
+
+
+    /*    var a = '10';
+     var b = a+1;
+     var c = a*1;
+     var d = a / 1;
+     var e = a-1;
+     var f = a & 1;
+     var g = a|1;
+     var h = ~a;
+     var i = -a;
+     var j = +a;
+     var k = ++a;
+     var m = --a;
+     var n = a++;
+     var p = a--;*/
+
+
+    /*var arr = [1,2,3];
+     for(var i= 0,item;item=arr[i++];){
+     console.log(item);
+     }*/
+
+    /*var arr = [1,2];
+     Array.prototype.test = 'abc';
+     Array.prototype.make = function () {
+     console.log(1);
+     }
+     for(var i in arr){
+     console.log(i);
+     }
+     */
+
+    /*var Person = function (name, age) {
+     this.name = name;
+     this.age = age;
+     };
+     Person.prototype.hi = function () {
+     console.log(this.name+',,'+this.age);
+     };
+     var makeObj = function () {
+     var args = Array.prototype.slice.apply(arguments);
+     var construction = args.shift();
+     var obj = {};
+     obj.__proto__ = construction.prototype;
+     construction.apply(obj,args);
+     return obj;
+     };
+     var person = makeObj(Person,'noodles',22);*/
+
+
+    /*   var obj = {name:'abc',age:1};
+     with(obj){
+     name='efg';
+     age=2;
+     obj.sex=1;
+     classes=1;
+     var test='test';}
+     console.log(obj);console.log(test);*/
+
+   /* function walkDown2(node, callback) {
+        if (!node)return;
+        var stack = [node];
+        var target;
+        while (stack.length) {
+            target = stack.shift();
+            callback(node);
+            Array.prototype.push.apply(stack, target.children);
+        }
+    }
+    walkDown2(document, function (node) {
+        console.count()
+    }); //包含document节点
+    var len = document.querySelectorAll('*').length //数量比上面输出的少1，因为不包含document节点
+    console.log(len);*/
+
+//i=4,i2=3,i3=3;
+//12,9,9
+    var value1 = 0, value2 = 0, value3 = 0;
+    for ( var i = 1; i <= 3; i++) {
+        var i2 = i;
+        (function() {
+            var i3 = i;
+            setTimeout(function() {
+                value1 += i;
+                value2 += i2;
+                value3 += i3;
+            }, 1);
+        })();
+    }
+    setTimeout(function() {
+        console.log(value1, value2, value3);
+    }, 100);
+</script>
+</body>
+</html>
